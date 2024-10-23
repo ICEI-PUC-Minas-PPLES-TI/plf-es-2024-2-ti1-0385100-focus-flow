@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Frases</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .carousel {
+            width: 600px;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 1000%;
+            height: 100%;
+            animation: slide 20s infinite;
+        }
+
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            10% { transform: translateX(-100%); }
+            20% { transform: translateX(-200%); }
+            30% { transform: translateX(-300%); }
+            40% { transform: translateX(-400%); }
+            50% { transform: translateX(-500%); }
+            60% { transform: translateX(-600%); }
+            70% { transform: translateX(-700%); }
+            80% { transform: translateX(-800%); }
+            90% { transform: translateX(-900%); }
+            100% { transform: translateX(-1000%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">"O começo é sempre o mais difícil, mas depois você só precisa continuar."</div>
+            <div class="carousel-item">"Você não precisa ser perfeito, só precisa começar."</div>
+            <div class="carousel-item">"Pequenos passos hoje levam a grandes conquistas amanhã."</div>
+            <div class="carousel-item">"A única maneira de realizar um sonho é começar a trabalhar nele."</div>
+            <div class="carousel-item">"Seu futuro depende do que você faz agora, não amanhã."</div>
+            <div class="carousel-item">"Não espere a motivação perfeita. A ação cria a motivação."</div>
+            <div class="carousel-item">"O tempo vai passar de qualquer forma, então faça ele contar."</div>
+            <div class="carousel-item">"Você não precisa ver o caminho todo, só o próximo passo."</div>
+            <div class="carousel-item">"Concluir uma tarefa hoje te deixa mais perto do seu objetivo amanhã."</div>
+            <div class="carousel-item">"O segredo do sucesso é a constância no propósito."</div>
+        </div>
+    </div>
+</body>
+</html>
