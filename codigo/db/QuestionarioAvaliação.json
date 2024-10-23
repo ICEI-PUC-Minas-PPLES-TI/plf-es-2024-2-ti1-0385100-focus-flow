@@ -1,0 +1,93 @@
+{
+  "page": {
+    "title": "Identifique suas fontes de procrastinação",
+    "description": "Marque os campos que você acredita que são responsáveis por sua procrastinação nos estudos.",
+    "backgroundColor": "#ADD8E6",  // Light blue background
+    "questionnaire": {
+      "questions": [
+        {
+          "id": 1,
+          "label": "Redes sociais (Facebook, Instagram, TikTok, etc.)",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 2,
+          "label": "Vídeos e streaming (YouTube, Netflix, etc.)",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 3,
+          "label": "Jogos online",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 4,
+          "label": "Navegação na internet sem propósito",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 5,
+          "label": "Conversas e bate-papos (WhatsApp, Messenger, etc.)",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 6,
+          "label": "Organização deficiente do tempo",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 7,
+          "label": "Falta de motivação",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 8,
+          "label": "Perfeccionismo",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 9,
+          "label": "Excesso de tarefas",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 10,
+          "label": "Ambientes com muitas distrações (TV, barulho, etc.)",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 11,
+          "label": "Tarefas que parecem difíceis ou entediantes",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 12,
+          "label": "Ansiedade em relação às responsabilidades",
+          "type": "checkbox",
+          "checked": false
+        },
+        {
+          "id": 13,
+          "label": "Cansaço ou fadiga",
+          "type": "checkbox",
+          "checked": false
+        }
+      ],
+      "submitButton": {
+        "text": "Enviar Respostas",
+        "action": "/submit"
+      }
+    }
+  }
+}
