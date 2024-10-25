@@ -1,0 +1,21 @@
+{
+    "activities": [
+      {
+        "id": 1,
+        "title": "Estudar para a prova de Engenharia de Software"
+      },
+      {
+        "id": 2,
+        "title": "Entregar resumo de artigo técnico"
+      },
+      {
+        "id": 3,
+        "title": "Revisar o código do projeto final"
+      },
+      {
+        "id": 4,
+        "title": "Participar do grupo de estudo"
+      }
+    ]
+  }
+  
