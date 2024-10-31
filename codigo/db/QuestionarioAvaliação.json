@@ -1,93 +1,78 @@
 {
-  "page": {
-    "title": "Identifique suas fontes de procrastinação",
-    "description": "Marque os campos que você acredita que são responsáveis por sua procrastinação nos estudos.",
-    "backgroundColor": "#ADD8E6",  // Light blue background
-    "questionnaire": {
-      "questions": [
+    "title": "Questionário de Procrastinação",
+    "description": "Formulário para identificar fontes de procrastinação",
+    "form": {
+      "id": "procrastinationForm",
+      "checkboxes": [
         {
-          "id": 1,
-          "label": "Redes sociais (Facebook, Instagram, TikTok, etc.)",
-          "type": "checkbox",
-          "checked": false
+          "name": "streaming",
+          "value": "Vídeos e streaming (YouTube, Netflix, etc.)",
+          "message": "Você se identificou com vídeos e streaming. Tente limitar o tempo gasto nessas plataformas, usando um cronômetro ou apps de controle de tempo."
         },
         {
-          "id": 2,
-          "label": "Vídeos e streaming (YouTube, Netflix, etc.)",
-          "type": "checkbox",
-          "checked": false
+          "name": "onlineGames",
+          "value": "Jogos online",
+          "message": "Você se identificou com jogos online. Tente reservar um tempo específico para jogar após concluir suas tarefas mais importantes."
         },
         {
-          "id": 3,
-          "label": "Jogos online",
-          "type": "checkbox",
-          "checked": false
+          "name": "browsing",
+          "value": "Navegação na internet sem propósito",
+          "message": "Você se identificou com navegação sem propósito. Defina limites para a navegação e tente manter um foco em sites que te ajudem a atingir seus objetivos."
         },
         {
-          "id": 4,
-          "label": "Navegação na internet sem propósito",
-          "type": "checkbox",
-          "checked": false
+          "name": "fatigue",
+          "value": "Cansaço ou fadiga",
+          "message": "Você se identificou com cansaço. Tente dormir mais e adotar uma rotina de sono consistente para melhorar seu foco durante os estudos."
         },
         {
-          "id": 5,
-          "label": "Conversas e bate-papos (WhatsApp, Messenger, etc.)",
-          "type": "checkbox",
-          "checked": false
+          "name": "anxiety",
+          "value": "Ansiedade em relação às responsabilidades",
+          "message": "Você se identificou com ansiedade. Tente dividir suas tarefas em partes menores para tornar tudo mais manejável e reduzir a ansiedade."
         },
         {
-          "id": 6,
-          "label": "Organização deficiente do tempo",
-          "type": "checkbox",
-          "checked": false
+          "name": "boringTasks",
+          "value": "Tarefas que parecem difíceis ou entediantes",
+          "message": "Você se identificou com tarefas difíceis ou entediantes. Tente usar a técnica Pomodoro ou recompensas pequenas para manter-se motivado ao longo do dia."
         },
         {
-          "id": 7,
-          "label": "Falta de motivação",
-          "type": "checkbox",
-          "checked": false
+          "name": "distractions",
+          "value": "Ambientes com muitas distrações (TV, barulho, etc.)",
+          "message": "Você se identificou com ambientes com distrações. Tente encontrar um local tranquilo e organizado para estudar ou use fones de ouvido com música instrumental."
         },
         {
-          "id": 8,
-          "label": "Perfeccionismo",
-          "type": "checkbox",
-          "checked": false
+          "name": "tooManyTasks",
+          "value": "Excesso de tarefas",
+          "message": "Você se identificou com excesso de tarefas. Priorize suas atividades e tente delegar ou adiar tarefas menos importantes para não se sobrecarregar."
         },
         {
-          "id": 9,
-          "label": "Excesso de tarefas",
-          "type": "checkbox",
-          "checked": false
+          "name": "perfectionism",
+          "value": "Perfeccionismo",
+          "message": "Você se identificou com perfeccionismo. Lembre-se que o progresso é mais importante que a perfeição. Tente concluir suas tarefas sem buscar o resultado ideal sempre."
         },
         {
-          "id": 10,
-          "label": "Ambientes com muitas distrações (TV, barulho, etc.)",
-          "type": "checkbox",
-          "checked": false
+          "name": "motivation",
+          "value": "Falta de motivação",
+          "message": "Você se identificou com falta de motivação. Tente definir metas claras e se recompensar por pequenas vitórias para aumentar sua motivação."
         },
         {
-          "id": 11,
-          "label": "Tarefas que parecem difíceis ou entediantes",
-          "type": "checkbox",
-          "checked": false
-        },
-        {
-          "id": 12,
-          "label": "Ansiedade em relação às responsabilidades",
-          "type": "checkbox",
-          "checked": false
-        },
-        {
-          "id": 13,
-          "label": "Cansaço ou fadiga",
-          "type": "checkbox",
-          "checked": false
+          "name": "chats",
+          "value": "Conversas e bate-papos (WhatsApp, Messenger, etc.)",
+          "message": "Você se identificou com conversas e bate-papos. Tente desativar as notificações enquanto estuda e se concentrar em uma tarefa de cada vez."
         }
       ],
-      "submitButton": {
-        "text": "Enviar Respostas",
-        "action": "/submit"
+      "submit_button": {
+        "type": "button",
+        "text": "Enviar",
+        "action": "submitForm()"
       }
+    },
+    "result": {
+      "element_id": "result",
+      "no_selection_message": "Você não selecionou nenhuma opção."
+    },
+    "script": {
+      "function": "submitForm",
+      "description": "Função para coletar opções selecionadas e exibir mensagens correspondentes."
     }
   }
-}
+  
