@@ -1,78 +1,70 @@
 {
-    "title": "Questionário de Procrastinação",
-    "description": "Formulário para identificar fontes de procrastinação",
-    "form": {
-      "id": "procrastinationForm",
-      "checkboxes": [
+  "Questionário de Procrastinação": [
+    {
+      "title": "Questionário de Procrastinação",
+      "description": "Formulário para identificar fontes de procrastinação",
+      "itens": [
         {
-          "name": "streaming",
-          "value": "Vídeos e streaming (YouTube, Netflix, etc.)",
+          "id_questionario": 1,
+          "name": "Vídeos e streaming (YouTube, Netflix, etc.)",
           "message": "Você se identificou com vídeos e streaming. Tente limitar o tempo gasto nessas plataformas, usando um cronômetro ou apps de controle de tempo."
         },
         {
-          "name": "onlineGames",
-          "value": "Jogos online",
+          "id_questionario": 2,
+          "name": "Jogos online",
           "message": "Você se identificou com jogos online. Tente reservar um tempo específico para jogar após concluir suas tarefas mais importantes."
         },
         {
-          "name": "browsing",
-          "value": "Navegação na internet sem propósito",
+          "id_questionario": 3,
+          "name": "Navegação na internet sem propósito",
           "message": "Você se identificou com navegação sem propósito. Defina limites para a navegação e tente manter um foco em sites que te ajudem a atingir seus objetivos."
         },
         {
-          "name": "fatigue",
-          "value": "Cansaço ou fadiga",
+          "id_questionario": 4,
+          "name": "Cansaço ou fadiga",
           "message": "Você se identificou com cansaço. Tente dormir mais e adotar uma rotina de sono consistente para melhorar seu foco durante os estudos."
         },
         {
-          "name": "anxiety",
-          "value": "Ansiedade em relação às responsabilidades",
+          "id_questionario": 5,
+          "name": "Ansiedade em relação às responsabilidades",
           "message": "Você se identificou com ansiedade. Tente dividir suas tarefas em partes menores para tornar tudo mais manejável e reduzir a ansiedade."
         },
         {
-          "name": "boringTasks",
-          "value": "Tarefas que parecem difíceis ou entediantes",
+          "id_questionario": 6,
+          "name": "Tarefas que parecem difíceis ou entediantes",
           "message": "Você se identificou com tarefas difíceis ou entediantes. Tente usar a técnica Pomodoro ou recompensas pequenas para manter-se motivado ao longo do dia."
         },
         {
-          "name": "distractions",
-          "value": "Ambientes com muitas distrações (TV, barulho, etc.)",
+          "id_questionario": 7,
+          "name": "Ambientes com muitas distrações (TV, barulho, etc.)",
           "message": "Você se identificou com ambientes com distrações. Tente encontrar um local tranquilo e organizado para estudar ou use fones de ouvido com música instrumental."
         },
         {
-          "name": "tooManyTasks",
-          "value": "Excesso de tarefas",
+          "id_questionario": 8,
+          "name": "Excesso de tarefas",
           "message": "Você se identificou com excesso de tarefas. Priorize suas atividades e tente delegar ou adiar tarefas menos importantes para não se sobrecarregar."
         },
         {
-          "name": "perfectionism",
-          "value": "Perfeccionismo",
+          "id_questionario": 9,
+          "name": "Perfeccionismo",
           "message": "Você se identificou com perfeccionismo. Lembre-se que o progresso é mais importante que a perfeição. Tente concluir suas tarefas sem buscar o resultado ideal sempre."
         },
         {
-          "name": "motivation",
-          "value": "Falta de motivação",
+          "id_questionario": 10,
+          "name": "Falta de motivação",
           "message": "Você se identificou com falta de motivação. Tente definir metas claras e se recompensar por pequenas vitórias para aumentar sua motivação."
         },
         {
-          "name": "chats",
-          "value": "Conversas e bate-papos (WhatsApp, Messenger, etc.)",
+          "id_questionario": 11,
+          "name": "Conversas e bate-papos (WhatsApp, Messenger, etc.)",
           "message": "Você se identificou com conversas e bate-papos. Tente desativar as notificações enquanto estuda e se concentrar em uma tarefa de cada vez."
         }
       ],
-      "submit_button": {
-        "type": "button",
-        "text": "Enviar",
-        "action": "submitForm()"
+      "result": {
+        "element_id": "result",
+        "no_selection_message": "Você não selecionou nenhuma opção."
       }
-    },
-    "result": {
-      "element_id": "result",
-      "no_selection_message": "Você não selecionou nenhuma opção."
-    },
-    "script": {
-      "function": "submitForm",
-      "description": "Função para coletar opções selecionadas e exibir mensagens correspondentes."
     }
-  }
+  ]
+}
   
