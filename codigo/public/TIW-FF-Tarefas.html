@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="TIW-FF-Tarefas.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gerenciador de Tarefas</h1>
+    </header>
+    <main>
+        <section id="task-list">
+            <h2>Tarefas</h2>
+            <input type="text" id="search" placeholder="Buscar Tarefa" oninput="searchTask()">
+            <div id="morningTasks">
+                <h3>Manhã</h3>
+            </div>
+            <div id="afternoonTasks">
+                <h3>Tarde</h3>
+            </div>
+            <div id="nightTasks">
+                <h3>Noite</h3>
+            </div>
+        </section>
+        <section id="add-task">
+            <h2>Nova Tarefa</h2>
+            <input type="text" id="taskName" placeholder="Nome da Tarefa">
+            <input type="time" id="taskTime">
+            <textarea id="taskDescription" placeholder="Descrição"></textarea>
+            <select id="priority">
+                <option value="normal">Normal</option>
+                <option value="alta">Alta</option>
+            </select>
+            <button onclick="addTask()">Adicionar Tarefa</button>
+        </section>
+    </main>
+    <script src="TIW-FF-Tarefas.js"></script>
+</body>
+
+</html>
