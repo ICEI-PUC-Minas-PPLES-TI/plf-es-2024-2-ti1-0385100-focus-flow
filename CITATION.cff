@@ -2,10 +2,10 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: Amaral Guimaraes De Lima Souza
+    given-names: Victor
+  - family-names: Cauã
+    given-names: Paduani Peixoto
   - family-names: 
     given-names: 
   - family-names: 
@@ -23,8 +23,8 @@ authors:
     family-names: 
     given-names: 
 keywords:
-  - 
-  - 
+  - Produtividade
+  - Foco
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
