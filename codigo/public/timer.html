@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Pomodoro Timer</h1>
+        </header>
+
+        <main>
+            <section class="timer-section">
+                <div class="timer-display-container">
+                    <div id="timer" class="timer-display">25:00</div>
+                </div>
+
+                <section class="session-config">
+                    <div class="control">
+                        <label for="focus-reason">Motivo do foco</label>
+                        <input type="text" id="focus-reason" placeholder="Ex: estudando física">
+                    </div>
+
+                </section>
+
+
+                <div class="buttons">
+                    <button id="start-btn">Iniciar</button>
+                    <button id="pause-btn">Pausar</button>
+                    <button id="stop-btn">Parar</button>
+                </div>
+            </section>
+
+            <section class="session-config">
+                <div class="control">
+                    <label for="focus-length">Foco (minutos)</label>
+                    <div class="adjust-btn-container">
+                        <button class="adjust-btn" id="focus-decrease">-</button>
+                        <input type="number" id="focus-length" value="25">
+                        <button class="adjust-btn" id="focus-increase">+</button>
+                    </div>
+                </div>
+                <div class="control">
+                    <label for="break-length">Descanso (minutos)</label>
+                    <div class="adjust-btn-container">
+                        <button class="adjust-btn" id="break-decrease">-</button>
+                        <input type="number" id="break-length" value="5">
+                        <button class="adjust-btn" id="break-increase">+</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="history">
+                <h2>Histórico</h2>
+                <div class="history-container">
+                    <div class="history-chart">
+                        <div class="bar" style="height: 80px;"></div>
+                        <div class="bar" style="height: 120px;"></div>
+                        <div class="bar" style="height: 60px;"></div>
+                        <div class="bar" style="height: 40px;"></div>
+                    </div>
+                    <ul class="history-list">
+                        <li><span class="event-title">Evento 1:</span> Estudando matemática - 25 min</li>
+                        <li><span class="event-title">Evento 2:</span> Fazendo exercícios - 20 min</li>
+                        <li><span class="event-title">Evento 3:</span> Leitura de artigo - 30 min</li>
+                        <li><span class="event-title">Evento 4:</span> Planejamento semanal - 15 min</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p> <span class="links"><a href="#">Sobre</a> | <a href="#">Contato</a></span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
