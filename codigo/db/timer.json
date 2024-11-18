@@ -1,0 +1,35 @@
+{
+    "sessions": [
+      {
+        "id": 1,
+        "username": "user1",
+        "token": "abcd1234"
+      },
+      {
+        "id": 2,
+        "username": "user2",
+        "token": "efgh5678"
+      },
+      {
+        "focusReason": "Sprint 2 TI ",
+        "focusTime": 900,
+        "restTime": "2",
+        "timestamp": "2024-11-18T21:59:30.098Z",
+        "id": 3
+      },
+      {
+        "focusReason": "Meditando",
+        "focusTime": 900,
+        "restTime": 1,
+        "timestamp": "2024-11-18T22:07:08.015Z",
+        "id": 4
+      },
+      {
+        "focusReason": "Sprint 2 PM",
+        "focusTime": 2400,
+        "restTime": 10,
+        "timestamp": "2024-11-18T22:08:20.333Z",
+        "id": 5
+      }
+    ]
+  }
