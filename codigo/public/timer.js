@@ -134,6 +134,13 @@ function getFocusReason() {
     return focusReason
 }
 
+function getRestTime() {
+    const breakLengthInSeconds = parseInt(breakLengthInput.value) * 60; // Obtém em segundos
+    const restTimeInMinutes = Math.floor(breakLengthInSeconds / 60);   // Converte para minutos
+    return restTimeInMinutes;
+}
+
+
 // Eventos dos botões
 startButton.addEventListener('click', startTimer);
 startButton.addEventListener('click', changeColorFocus);
@@ -150,28 +157,29 @@ document.getElementById('break-decrease').addEventListener('click', decreaseBrea
 // Inicialização do timer com o valor padrão de foco
 updateDisplay(focusTime);
 
-// Função para enviar os dados de foco para o JSON Server
 function saveFocusData(focusReason, focusTime) {
+    const restTime = getRestTime(); // Obtendo o tempo de descanso formatado
     fetch('/sessions', {
-        method: 'POST', // Método para criar dados
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             focusReason: focusReason,
             focusTime: focusTime,
-            timestamp: new Date().toISOString() // Adicionando um timestamp
+            restTime: restTime, // Adicionando o restTime em minutos
+            timestamp: new Date().toISOString()
         })
     })
-    .then(response => response.json()) // Espera o JSON de resposta
-    .then(data => {
-        console.log('Dado salvo com sucesso:', data);
-        // Aqui você pode atualizar o histórico na página
-    })
-    .catch((error) => {
-        console.log('Erro ao salvar os dados:' + error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            console.log('Dado salvo com sucesso:', data);
+        })
+        .catch((error) => {
+            console.log('Erro ao salvar os dados:' + error);
+        });
 }
+
 
 function loadFocusHistory() {
     fetch('/sessions', {
@@ -180,59 +188,58 @@ function loadFocusHistory() {
             'Content-Type': 'application/json'
         }
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro ao obter os dados: ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (!Array.isArray(data) || data.length === 0) {
-            console.warn('Nenhum dado encontrado ou formato inválido.');
-            return;
-        }
-
-        const historySection = document.querySelector('.history');
-        const historyChart = historySection.querySelector('.history-chart');
-        const historyList = historySection.querySelector('ul');
-
-        // Limpa elementos existentes antes de adicionar novos
-        historyChart.innerHTML = '';
-        historyList.innerHTML = '';
-
-        // Calcula o maior tempo para escalar as barras
-        const maxTime = Math.max(...data.map(session => session.focusTime));
-        const maxHeight = 200; // Altura máxima das barras (em pixels)
-
-        // Adiciona as barras e os itens à lista
-        data.forEach((session, index) => {
-            // Valida focusTime como numérico
-            if (typeof session.focusTime !== 'number' || session.focusTime <= 0) {
-                console.warn(`Tempo inválido na sessão ${index + 1}:`, session);
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao obter os dados: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (!Array.isArray(data) || data.length === 0) {
+                console.warn('Nenhum dado encontrado ou formato inválido.');
                 return;
             }
 
-            // Criar barra do gráfico
-            const bar = document.createElement('div');
-            bar.className = 'bar';
+            const historySection = document.querySelector('.history');
+            const historyChart = historySection.querySelector('.history-chart');
+            const historyList = historySection.querySelector('ul');
 
-            const height = (session.focusTime / maxTime) * maxHeight; // Altura proporcional
-            bar.style.height = `${height}px`;
-            bar.title = `${session.focusReason}: ${formatTime(session.focusTime)}`; // Tooltip para informações adicionais
-            historyChart.appendChild(bar);
+            // Limpa elementos existentes antes de adicionar novos
+            historyChart.innerHTML = '';
+            historyList.innerHTML = '';
 
-            // Criar item da lista
-            const listItem = document.createElement('li');
-            listItem.textContent = `${index + 1}. ${session.focusReason} - ${formatTime(session.focusTime)}`;
-            historyList.appendChild(listItem);
+            // Calcula o maior tempo para escalar as barras
+            const maxTime = Math.max(...data.map(session => session.focusTime));
+            const maxHeight = 200; // Altura máxima das barras (em pixels)
+
+            // Adiciona as barras e os itens à lista
+            data.forEach((session, index) => {
+                // Valida focusTime como numérico
+                if (typeof session.focusTime !== 'number' || session.focusTime <= 0) {
+                    console.warn(`Tempo inválido na sessão ${index + 1}:`, session);
+                    return;
+                }
+
+                // Criar barra do gráfico
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+
+                const height = (session.focusTime / maxTime) * maxHeight; // Altura proporcional
+                bar.style.height = `${height}px`;
+                bar.title = `${session.focusReason}: ${formatTime(session.focusTime)}`; // Tooltip para informações adicionais
+                historyChart.appendChild(bar);
+
+                // Criar item da lista
+                const listItem = document.createElement('li');
+                listItem.textContent = `${session.focusReason} - ${formatTime(session.focusTime)} - ${formatTime(session.restTime * 60)}`;
+
+
+                historyList.appendChild(listItem);
+            });
+        })
+        .catch((error) => {
+            console.error('Erro ao carregar o histórico:', error);
         });
-    })
-    .catch((error) => {
-        console.error('Erro ao carregar o histórico:', error);
-    });
 }
-
-
-
 
 document.addEventListener('DOMContentLoaded', loadFocusHistory);
