@@ -134,6 +134,7 @@ function getFocusReason() {
     return focusReason
 }
 
+
 function getRestTime() {
     const breakLengthInSeconds = parseInt(breakLengthInput.value) * 60; // Obtém em segundos
     const restTimeInMinutes = Math.floor(breakLengthInSeconds / 60);   // Converte para minutos
@@ -158,7 +159,7 @@ document.getElementById('break-decrease').addEventListener('click', decreaseBrea
 updateDisplay(focusTime);
 
 function saveFocusData(focusReason, focusTime) {
-    const restTime = getRestTime(); // Obtendo o tempo de descanso formatado
+    const restTime = getRestTime();
     fetch('/sessions', {
         method: 'POST',
         headers: {
@@ -168,7 +169,7 @@ function saveFocusData(focusReason, focusTime) {
             focusReason: focusReason,
             focusTime: focusTime,
             restTime: restTime, // Adicionando o restTime em minutos
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
         })
     })
         .then(response => response.json())
@@ -201,18 +202,12 @@ function loadFocusHistory() {
             }
 
             const historySection = document.querySelector('.history');
-            const historyChart = historySection.querySelector('.history-chart');
             const historyList = historySection.querySelector('ul');
 
-            // Limpa elementos existentes antes de adicionar novos
-            historyChart.innerHTML = '';
+            // Limpa a lista antes de adicionar novos itens
             historyList.innerHTML = '';
 
-            // Calcula o maior tempo para escalar as barras
-            const maxTime = Math.max(...data.map(session => session.focusTime));
-            const maxHeight = 200; // Altura máxima das barras (em pixels)
-
-            // Adiciona as barras e os itens à lista
+            // Adiciona os itens à lista
             data.forEach((session, index) => {
                 // Valida focusTime como numérico
                 if (typeof session.focusTime !== 'number' || session.focusTime <= 0) {
@@ -220,20 +215,12 @@ function loadFocusHistory() {
                     return;
                 }
 
-                // Criar barra do gráfico
-                const bar = document.createElement('div');
-                bar.className = 'bar';
 
-                const height = (session.focusTime / maxTime) * maxHeight; // Altura proporcional
-                bar.style.height = `${height}px`;
-                bar.title = `${session.focusReason}: ${formatTime(session.focusTime)}`; // Tooltip para informações adicionais
-                historyChart.appendChild(bar);
+                const timeStamp = new Date(session.timestamp);
+                const formattedDate = `${timeStamp.toLocaleDateString()} ${timeStamp.toLocaleTimeString()}`;
 
-                // Criar item da lista
                 const listItem = document.createElement('li');
-                listItem.textContent = `${session.focusReason} - ${formatTime(session.focusTime)} - ${formatTime(session.restTime * 60)}`;
-
-
+                listItem.textContent = `${session.focusReason} - ${formatTime(session.focusTime)} - ${formatTime(session.restTime * 60)} - ${formattedDate}`;
                 historyList.appendChild(listItem);
             });
         })
@@ -241,5 +228,7 @@ function loadFocusHistory() {
             console.error('Erro ao carregar o histórico:', error);
         });
 }
+
+
 
 document.addEventListener('DOMContentLoaded', loadFocusHistory);

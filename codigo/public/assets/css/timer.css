@@ -171,91 +171,58 @@ input[type="number"] {
     background-color: #4CAF50;
     color: white;
 }
-
+/* Estilo da seção de histórico */
 .history {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.history-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Largura da div */
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px; /* Limite de altura para a área do histórico */
+    overflow-y: auto; /* Barra de rolagem se os itens ultrapassarem a altura */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 10px; /* Espaçamento entre os itens */
 }
 
-.history-chart {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; /* Alinha as barras à parte inferior */
-    gap: 15px; /* Ajustado para aumentar o espaçamento entre barras */
-    width: 100%;
-    max-width: 500px;
-    height: 150px;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+h3 {
+    font-size: 18px; /* Um tamanho menor que o título principal */
+    color: #666; /* Cor neutra para diferenciar do título principal */
+    font-weight: normal; /* Peso leve para não competir com os títulos principais */
+    text-align: center; /* Centralizado para manter o alinhamento visual */
+    margin-bottom: 10px; /* Espaço inferior para separação do conteúdo */
+    line-height: 1.5; /* Melhor espaçamento entre as linhas */
 }
 
-.bar {
-    width: 30px;
-    background-color: #FF6347;
-    border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
 
-.bar:hover {
-    transform: scale(1.1);
-    background-color: #e53e36;
-}
-
-.history-list {
-    list-style: none;
+/* Estilo da lista dentro do histórico */
+.history-rectangle ul {
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: left;
-    width: 100%;
-    max-width: 500px;
-    font-size: 16px;
+}
+
+/* Estilo de cada item na lista de histórico */
+.history-rectangle ul li {
+    background-color: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
     color: #333;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    line-height: 1.5;
 }
 
-.history-list li {
-    margin-bottom: 10px;
+/* Efeito de hover para os itens da lista */
+.history-rectangle ul li:hover {
+    background-color: #eaeaea;
 }
 
-.history-list li:last-child {
-    margin-bottom: 0;
-}
 
-.history-list li:first-child {
-    background-color: #f0fff4; /* Destaque para o primeiro item */
-    font-weight: bold;
-}
 
-.event-title {
-    font-weight: bold;
-    color: #4CAF50;
-}
 
-footer {
-    margin-top: 30px;
-    font-size: 16px;
-    color: #4CAF50;
-}
 
-footer .links a {
-    color: #007BFF;
-    text-decoration: none;
-}
-
-footer .links a:hover {
-    text-decoration: underline;
-}
