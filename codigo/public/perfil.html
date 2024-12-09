@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow - Personalização de Perfil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao FocusFlow!</h1>
+        <p>Personalize seu perfil para recomendações personalizadas</p>
+    </header>
+
+    <main>
+        <section id="profile-customization">
+            <h2>Personalize seu perfil</h2>
+            <form id="profile-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+
+                <label for="goal">Principal objetivo:</label>
+                <select id="goal" name="goal">
+                    <option value="concurso">Estudar para concursos</option>
+                    <option value="enem">Se preparar para o ENEM</option>
+                    <option value="linguagem">Aprender um novo idioma</option>
+                </select>
+
+                <label for="study-time">Quantas horas por dia você estuda?</label>
+                <input type="number" id="study-time" name="study-time" min="1" max="24" placeholder="Ex: 4" required>
+
+                <button id="save" type="submit">Salvar</button>
+            </form>
+        </section>
+
+        <section id="recommendations" style="display: none;">
+            <h2>Recomendações para você</h2>
+            <div id="recommendation-container"></div>
+            <button id="generate-recommendations" type="button">Gerar recomendações</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
